@@ -47,7 +47,7 @@ public class GerenciadorController : ControllerBase
         }
     }
 
-    [Authorize(Roles = "garcon")]
+    [Authorize(Roles = "garcom")]
     [HttpPost]
     [Route("comanda/pedidos")]
     public async Task<IActionResult> ComandaPedido([FromBody] ComandaPedidoViewModel model)
@@ -64,7 +64,7 @@ public class GerenciadorController : ControllerBase
             {
                 pedido.CodigoProduto = cm.Codigo;
                 pedido.QuantidadeDoPedido = cm.QtPedido;
-                pedido.ComandaId = comanda.Id;
+                pedido.ComandaId = comanda;
                 _baladaRepository.Pedidos.AddAsync(pedido);
             }
            

@@ -6,5 +6,5 @@ public class Pedido
     public string? CodigoProduto { get; set; } = string.Empty;
     public int? QuantidadeDoPedido { get; set; } = default;
     public DateTime? Data { get; set; } = default;
-    public int ComandaId { get; set; } = default;
+    public Comanda ComandaId { get; set; } = default;
 }
